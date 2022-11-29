@@ -8,12 +8,16 @@ import subprocess
 # Create App
 app = Flask(__name__)
 
-# Select Route
+# Routing out the Index Page
 @app.route('/', methods=['POST', 'GET'])
 @app.route('/index.html')
 def index():
     return render_template("index.html")
 
+# Do the same thing as above for all the pages you make
+
+
+# Receive route for retrieving recorded data and predicting on it
 @app.route("/receive", methods=['POST'])
 def form():
     file = request.files['file']
